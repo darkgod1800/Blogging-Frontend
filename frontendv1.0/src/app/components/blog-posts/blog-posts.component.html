@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div *ngFor="let post of blogPosts" class="blog-post card mb-4">
+      <img [src]="post.featuredImageUrl" class="card-img-top" alt="Featured Image">
+      <div class="card-body">
+          <h3 class="card-title">{{ post.title }}</h3>
+          <p class="card-text">{{ post.shortDescription }}</p>
+          <p class="card-text">
+              <small class="text-muted">Published by: {{ post.author }} on {{ post.publishedDate | date }}</small>
+          </p>
+          <button class="btn btn-primary" (click)="viewDetails(post.id)">
+              View Blog
+          </button>
+      </div>
+  </div>
+</div>
